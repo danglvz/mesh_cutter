@@ -216,15 +216,33 @@ void Mesh::updatePointArray(double output_points[][3], int output_faces[][MAX_SI
 	for ( size_t index = 0; index < faces_arr.size(); ++index )
 	{
 
-		output_faces[index][0] = faces_arr[index].edges.size();
-		if(faces_arr[index].isAHole)
-			output_faces[index][0] *= -1;
+		int count_of_points = 0;
+		
 
-		int i  = 0 ;
+		int i  = 1 ;
+		size_t temp_index = edges_arr[*(faces_arr[index].edges.begin())][0];
 		for (auto &edge_index: faces_arr[index].edges)
 		{
-			output_faces[index][i + 1] = edges_arr[edge_index][0];
+			if ( edges_arr[edge_index][0] == temp_index )
+			{
+				output_faces[index][i] = temp_index;
+				++count_of_points;
+			}
+			else
+			{
+				output_faces[index][i++] = temp_index;
+				++count_of_points;
+				output_faces[index][i] = edges_arr[edge_index][0];
+				++count_of_points;
+			}
+			temp_index = edges_arr[edge_index][1];
 			++i;
 		}
+
+
+		if(faces_arr[index].isAHole)
+			count_of_points *= -1;
+
+		output_faces[index][0] = count_of_points;
 	}
 }

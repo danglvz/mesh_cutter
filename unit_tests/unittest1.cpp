@@ -157,7 +157,7 @@ namespace unit_tests
 			};
 
 			mesh::Mesh test_mesh(point_array, 3, face_array, 1);
-			test_mesh.clipByPlane(base_entities::Plane(base_entities::Vec3d(0, 1, 0), 0));
+			test_mesh.clipByPlane(base_entities::Plane(base_entities::Vec3d(-1, 0, 0), base_entities::Vec3d(0,0,1), base_entities::Vec3d(0,0,0) ));
 			test_mesh.updatePointArray(point_array, face_array);
 
 			for (int i = 0 ; i< 10; ++i)
@@ -173,6 +173,58 @@ namespace unit_tests
 			}
 
 		}
+
+		TEST_METHOD(Mesh_polygon_with_holes_test)
+		{
+			double point_array[15][3] =
+			{
+				{-4, 4, 0},
+				{4, 4, 0},
+				{4, -4, 0},
+				{-4, -4, 0},
+				{-2, 2, 0},
+				{2, 2, 0},
+				{2, -2, 0},
+				{-2, -2, 0}
+			};
+
+			int face_array[5][MAX_SIZE_OF_FACE_ARRAY] =
+			{
+				{4, 0, 1, 2, 3},
+				{-4, 4, 5, 6, 7}
+			};
+
+			double expect_point_array[15][3] =
+			{
+				{-4, 4, 0},
+				{4, 4, 0},
+				{4, -4, 0},
+				{-4, -4, 0},
+				{-2, 2, 0},
+				{2, 2, 0},
+				{2, -2, 0},
+				{-2, -2, 0},
+				{4, 0, 0},
+				{-4, 0, 0},
+				{2, 0, 0},
+				{-2, 0, 0}
+			};
+
+			int expect_face_array[5][MAX_SIZE_OF_FACE_ARRAY] =
+			{
+				{4, 0, 1, 8, 9},
+				{-4, 4, 5, 10, 11}
+			};
+
+			base_entities::Plane plane = base_entities::Plane(base_entities::Vec3d(0,1,0), 0);
+			mesh::Mesh test_mesh = mesh::Mesh(point_array ,8, face_array, 2);
+
+			test_mesh.updatePointArray(point_array, face_array);
+
+
+		}
+
+
 	
 	};
 
