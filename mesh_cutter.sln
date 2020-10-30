@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mesh_cutter", "mesh_cutter\mesh_cutter.vcxproj", "{A1DCED80-42F1-48FB-8B67-3C4FA7DC3F39}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unit_tests", "unit_tests\unit_tests.vcxproj", "{CA6808BF-5709-48FD-9406-87259C1193C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1DCED80-42F1-48FB-8B67-3C4FA7DC3F39}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A1DCED80-42F1-48FB-8B67-3C4FA7DC3F39}.Debug|Win32.Build.0 = Debug|Win32
+		{A1DCED80-42F1-48FB-8B67-3C4FA7DC3F39}.Release|Win32.ActiveCfg = Release|Win32
+		{A1DCED80-42F1-48FB-8B67-3C4FA7DC3F39}.Release|Win32.Build.0 = Release|Win32
+		{CA6808BF-5709-48FD-9406-87259C1193C3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CA6808BF-5709-48FD-9406-87259C1193C3}.Debug|Win32.Build.0 = Debug|Win32
+		{CA6808BF-5709-48FD-9406-87259C1193C3}.Release|Win32.ActiveCfg = Release|Win32
+		{CA6808BF-5709-48FD-9406-87259C1193C3}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
