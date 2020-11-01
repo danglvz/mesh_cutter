@@ -31,7 +31,6 @@ namespace my_mesh_cutter
 			explicit Plane();
 			Plane(const Vec3d &normal_, double scalar_);
 			Plane(const Vec3d &v1, const Vec3d &v2, const Vec3d &v3);
-
 			Plane Normalize() const;
 		};
 	}

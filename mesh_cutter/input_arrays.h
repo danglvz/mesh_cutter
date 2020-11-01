@@ -1,0 +1,9 @@
+#ifndef INPUT_ARRAYS_H
+#define INPUT_ARRAYS_H
+
+#define POINT_ARRAY_CAPACITY 100
+#define FACE_ARRAY_CAPACITY 20
+#define MAX_SIZE_OF_FACE_ARRAY 10
+
+
+#endif

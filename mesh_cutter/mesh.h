@@ -3,8 +3,7 @@
 
 #include "stdafx.h"
 #include "base_entities.h" 
-
-#define MAX_SIZE_OF_FACE_ARRAY 10
+#include "input_arrays.h"
 
 
 
@@ -62,10 +61,14 @@ namespace my_mesh_cutter
 		public:
 			explicit Mesh();
 			Mesh(const std::vector<Vertex> &vertices, const std::vector<Edge> &edges, const std::vector<Face> &faces);
-			Mesh(const double input_points[][3], size_t point_array_size, const int input_faces[][MAX_SIZE_OF_FACE_ARRAY], size_t face_array_size);
+			Mesh(const double input_points[POINT_ARRAY_CAPACITY][3], 
+				size_t count_of_points, 
+				const int input_faces[FACE_ARRAY_CAPACITY][MAX_SIZE_OF_FACE_ARRAY], 
+				size_t count_if_faces);
 						
 			void clipByPlane(const base_entities::Plane &clipplane);
-			void updatePointArray(double output_points[][3], int output_faces[][MAX_SIZE_OF_FACE_ARRAY]); 
+			void updateArray(double output_points[POINT_ARRAY_CAPACITY][3], 
+							int output_faces[FACE_ARRAY_CAPACITY][MAX_SIZE_OF_FACE_ARRAY]); 
 		};
 
 	}

@@ -78,12 +78,12 @@ Plane::Plane(const Vec3d &normal_, double scalar_) :
 	scalar(scalar_)
 {}
 
+
 Plane::Plane(const Vec3d &v0, const Vec3d &v1, const Vec3d &v2)
 {
 	normal = ( ( v1 - v0 ).cross(v2-v0) ).nomalize();
 	scalar = v0.dot(normal);
 }
-
 
 Plane Plane::Normalize() const
 {

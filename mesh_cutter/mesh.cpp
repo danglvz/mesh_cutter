@@ -83,14 +83,17 @@ Mesh::Mesh(const std::vector<Vertex> &vertices, const std::vector<Edge> &edges, 
 	faces_arr(faces)
 {}
 
-Mesh::Mesh(const double input_points[][3], size_t input_points_array_size, const int input_faces[][MAX_SIZE_OF_FACE_ARRAY], size_t input_face_array_size)
+Mesh::Mesh(const double input_points[POINT_ARRAY_CAPACITY][3], 
+		   size_t count_of_points, 
+		   const int input_faces[FACE_ARRAY_CAPACITY][MAX_SIZE_OF_FACE_ARRAY], 
+		   size_t count_of_faces)
 {
-	for (size_t index = 0; index < input_points_array_size; ++index)
+	for (size_t index = 0; index < count_of_points; ++index)
 	{
 		vertex_arr.emplace_back(base_entities::Vec3d(input_points[index][0], input_points[index][1], input_points[index][2]));
 	}
 
-	for (size_t input_face_index = 0; input_face_index < input_face_array_size; ++input_face_index)
+	for (size_t input_face_index = 0; input_face_index < count_of_faces; ++input_face_index)
 	{
 		faces_arr.emplace_back();
 		size_t last_face_index = faces_arr.size() - 1;
@@ -203,7 +206,8 @@ void Mesh::clipByPlane(const Plane &clipplane)
 }
 
 
-void Mesh::updatePointArray(double output_points[][3], int output_faces[][MAX_SIZE_OF_FACE_ARRAY])
+void Mesh::updateArray(double output_points[POINT_ARRAY_CAPACITY][3], 
+					   int output_faces[FACE_ARRAY_CAPACITY][MAX_SIZE_OF_FACE_ARRAY])
 {
 	for (size_t index = 0; index < vertex_arr.size(); ++index)
 	{
