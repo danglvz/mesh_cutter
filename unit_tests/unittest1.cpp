@@ -128,7 +128,7 @@ namespace unit_tests
 
 		}
 
-		//полигон - треугольник
+		//РїРѕР»РёРіРѕРЅ - С‚СЂРµСѓРіРѕР»СЊРЅРёРє
 		TEST_METHOD(Mesh_simple_cut_test)
 		{
 			double point_array[POINT_ARRAY_CAPACITY][3] =
@@ -165,7 +165,7 @@ namespace unit_tests
 
 		}
 
-		//полигон - четырех угольник с дыркой
+		//РїРѕР»РёРіРѕРЅ С‡РµС‚С‹СЂРµС…СѓРіРѕР»СЊРЅРёРє СЃ РґС‹СЂРєРѕР№
 		TEST_METHOD(Mesh_polygon_with_holes_test)
 		{
 			double point_array[POINT_ARRAY_CAPACITY][3] =
@@ -219,7 +219,7 @@ namespace unit_tests
 			
 		}
 
-		//невыпуклый полигон
+		//РЅРµРІС‹РїСѓРєР»С‹Р№ РїРѕР»РёРіРѕРЅ
 		TEST_METHOD(Mesh_nonconvex_polygon)
 		{
 			double point_array[POINT_ARRAY_CAPACITY][3] = 
