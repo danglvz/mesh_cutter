@@ -11,6 +11,7 @@ using namespace my_mesh_cutter;
 
 namespace unit_tests
 {		
+
 	TEST_CLASS(Vec3d_TESTS)
 	{
 	public:
@@ -127,6 +128,7 @@ namespace unit_tests
 
 		}
 
+		//полигон - треугольник
 		TEST_METHOD(Mesh_simple_cut_test)
 		{
 			double point_array[POINT_ARRAY_CAPACITY][3] =
@@ -163,6 +165,7 @@ namespace unit_tests
 
 		}
 
+		//полигон - четырех угольник с дыркой
 		TEST_METHOD(Mesh_polygon_with_holes_test)
 		{
 			double point_array[POINT_ARRAY_CAPACITY][3] =
@@ -216,6 +219,7 @@ namespace unit_tests
 			
 		}
 
+		//невыпуклый полигон
 		TEST_METHOD(Mesh_nonconvex_polygon)
 		{
 			double point_array[POINT_ARRAY_CAPACITY][3] = 
